@@ -1,0 +1,126 @@
+/* General reset to ensure consistency across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the height to 100% for html and body to ensure full viewport usage */
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Apply an ombre background and center content */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffa38c, #e0ff6f, #70e2fe);
+    text-align: center;
+    color: white;
+    flex-direction: column;
+    padding: 20px; /* Add padding to ensure content is not cut off */
+}
+
+/* Styling for the side images */
+.side-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.left {
+    left: 0;
+    background-image: url('border.gif'); /* Replace with your left image URL */
+}
+
+.right {
+    right: 0;
+    background-image: url('border.gif'); /* Replace with your right image URL */
+}
+
+/* Styling for the content to ensure it stays centered */
+.content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 80%;
+    padding: 0 120px; /* Add padding to prevent overlap with side images */
+}
+
+/* Styling for the heading */
+h1 {
+    margin-bottom: 5px;
+    font-size: 2em;
+    margin-top: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+/* Styling for the iframe container to make it responsive */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    max-width: 80%;
+    max-height: 450px;
+    padding-bottom: 42.21%; /* Aspect ratio 1140:539 */
+    height: 0;
+    overflow: hidden;
+    margin-top: 8px; /* Add margin to ensure space between heading and iframe */
+    border: 2px solid transparent;
+}
+
+/* Styling for the iframe to make it fill its container */
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Firefly container */
+.firefly-container1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Firefly effect */
+.firefly {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    box-shadow: 0 0 10px 5px yellow;
+    animation: flicker 2s infinite;
+}
+
+/* Keyframes for flicker effect */
+@keyframes flicker {
+    0%, 100% { opacity: 0; transform: translateY(-15px); }
+    50% { opacity: 1; transform: translateY(10px); }
+}
+
+/* Positioning the fireflies randomly */
+.firefly:nth-child(1) { top: 15%; left: 20%; animation-delay: 0s; }
+.firefly:nth-child(2) { top: 22%; left: 78.5%; animation-delay: 0.5s; }
+.firefly:nth-child(3) { top: 20%; left: 46%; animation-delay: 1s; }
+.firefly:nth-child(4) { top: 50%; left: 23.7%; animation-delay: 1.5s; }
+.firefly:nth-child(5) { top: 66%; left: 29.7%; animation-delay: 2s; }
+.firefly:nth-child(6) { top: 75%; left: 73%; animation-delay: 2.5s; }
+.firefly:nth-child(7) { top: 45%; left: 67.8%; animation-delay: 3s; }
+.firefly:nth-child(8) { top: 62%; left: 55%; animation-delay: 0.5s; }
+.firefly:nth-child(9) { top: 59%; left: 39%; animation-delay: 1s; }
